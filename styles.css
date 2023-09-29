@@ -1,0 +1,126 @@
+:root {
+--azure: #007BFFff;
+--mustard: #FFD966ff;
+--black: #000000;
+--white-smoke: #ffffff;
+}
+body {
+background-color: var(--white-smoke);
+color: var(--black);
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+margin: 0;
+padding: 0;
+display: flex;
+flex-direction: row-reverse; /* Reverse the direction to put content on the right */
+height: 100vh;
+}
+
+.container {
+text-align: center;
+flex-grow: 1;
+display: flex;
+flex-direction: column;
+justify-content: right;
+padding-top: 110px;
+align-items: center;
+width: 40%; /* Occupy the right half of the screen */
+}
+
+.logo {
+max-width: 85px; /* Reduce the size by 20% */
+margin: 10px auto 0 auto; /* Add margin to the top */
+position: absolute; /* Position the logo absolutely */
+top: 1px; /* Place it 20px from the top */
+left: 20px; /* Place it 20px from the left */
+}
+
+.btn-container {
+display: flex;
+flex-direction: column; /* Display buttons horizontally */
+justify-content: center; /* Center buttons horizontally */
+align-items: center;
+margin-top: 20px;
+}
+
+.btn {
+padding: 15px 60px; /* Wider padding for rectangular shape */
+background-color: var(--azure); /* Darkish Purple */
+color: var(--white-smoke);
+text-decoration: none;
+font-weight: bold;
+margin: 5px; /* Add some margin between buttons */
+border-radius: 5px;
+text-align: center; /* Center button text horizontally */
+min-width: 200px; /* Ensure both buttons have the same width */
+}
+
+
+.animation-container {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100%; /* Full screen height */
+width: 60%; /* Occupy the left half of the screen */
+background-color: var(--azure); /* Initial background color */
+animation: colorChange 5s linear infinite alternate; /* Animation properties */
+}
+
+@keyframes colorChange {
+0% {
+background-color: var(--azure);
+}
+100% {
+background-color: var(--mustard);
+}
+}
+
+.footer {
+text-align: center;
+padding: 5px;
+position: absolute; /* Position the footer absolutely */
+bottom: 40px; /* Place it at the bottom */
+display: flex;
+justify-content: center; /* Center the links horizontally */
+}
+
+.footer a {
+color: #000000;
+text-decoration: none;
+margin: 0 10px;
+font-size: 12px; /* Reduce the font size */
+}
+
+.footer a::before,
+.footer a::after {
+content: " | "; /* Add a "|" separator before and after each link */
+}
+
+/* Hide animation on reduced screen size */
+@media (max-width: 768px) {
+.animation-container {
+display: none;
+}
+}
+
+.btn-container {
+flex-direction: column; /* Stack buttons on top of each other */
+align-items: center; /* Center buttons vertically */
+}
+.footer-logo-container {
+text-align: center;
+margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.footer-logo {
+    text-align: center;
+    padding: 5px;
+    position: absolute; /* Position the footer absolutely */
+    bottom: 80px; /* Place it at the bottom */
+    display: flex;
+    justify-content: center; /* Center the links horizontally */
+    max-width: 90px;
+}
+
+
+
